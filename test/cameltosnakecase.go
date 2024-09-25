@@ -15,11 +15,18 @@ func CamelToSnakeCase(s string) string {
 		}
 	}
 	res := ""
-	for i := 0; i < len(s); i++ {
-		if (s[i] >= 'A' && s[i] <= 'Z') && i != 0 {
-			res += "_" + string(s[i])
+	// for i := 0; i < len(s); i++ {
+	// 	if (s[i] >= 'A' && s[i] <= 'Z') && i != 0 {
+	// 		res += "_" + string(s[i])
+	// 	} else {
+	// 		res += string(s[i])
+	// 	}
+	// }
+	for i := 0 ; i< len(s);i++{
+		if (s[i] >='A' && s[i] <= 'Z') && i != 0{
+			res += "_" +string(s[i])
 		} else {
-			res += string(s[i])
+			res+= string(s[i])
 		}
 	}
 	return res

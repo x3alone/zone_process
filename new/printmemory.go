@@ -2,39 +2,71 @@ package main
 
 import "fmt"
 
-func PrintMemory(code [10]byte) {
-	res := ""
+// func PrintMemory(code [10]byte) {
+// 	res := ""
 
-	for i := 0; i < len(code); i++ {
-		if code[i] == 0 {
+// 	for i := 0; i < len(code); i++ {
+// 		if code[i] == 0 {
+// 			res += "00"
+// 		}
+// 		res += ToHex(rune(code[i])) + " "
+// 		if i == 3 || i == 7 || i == 9 {
+// 			res += "\n"
+// 		}
+// 	}
+// 	for i := 0; i < len(code); i++ {
+// 		if code[i] < ' ' {
+// 			res += "."
+// 		} else {
+// 			res += string(code[i])
+// 		}
+// 	}
+// 	fmt.Println(res)
+// }
+
+// func ToHex(nbr int32) string {
+// 	bs := "0123456789abcdef"
+// 	res := ""
+// 	for nbr > 0 {
+// 		tmp := nbr % 16
+// 		res = string(bs[tmp]) + res
+// 		nbr /= 16
+// 	}
+// 	return res
+// }
+
+
+func PrintMemory(code [10]byte){
+	res := ""
+	for i := 0; i < len(code); i++{
+		if code[i] ==0{
 			res += "00"
 		}
-		res += ToHex(rune(code[i])) + " "
-		if i == 3 || i == 7 || i == 9 {
-			res += "\n"
+		res += ToHex(rune(code[i])) +" "
+		if i == 3 || i == 7 || i == 9{
+			res+= "\n"
 		}
 	}
-	for i := 0; i < len(code); i++ {
-		if code[i] < ' ' {
+	for i := 0; i < len(code) ; i++{
+		if code[i] < ' '{
 			res += "."
-		} else {
+		} else{
 			res += string(code[i])
 		}
 	}
 	fmt.Println(res)
 }
 
-func ToHex(nbr int32) string {
+func ToHex(nb int32)string{
 	bs := "0123456789abcdef"
-	res := ""
-	for nbr > 0 {
-		tmp := nbr % 16
-		res = string(bs[tmp]) + res
-		nbr /= 16
+	res:= ""
+	for nb> 0 {
+		tmp := nb %16 
+		 res = string(bs[tmp]) + res
+		 nb /= 16
 	}
 	return res
 }
-
 
 func main() {
 	PrintMemory([10]byte{'h', 'e', 'l', 'l', 'o', 16, 21, '*'})

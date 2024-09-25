@@ -4,14 +4,26 @@ import (
 	"fmt"
 )
 
-func HashCode(dec string) string {
-	var res []rune
-	for _, i := range dec{
-		new:=(int(i)+len(dec)) %127
-		if new< 33{
+// func HashCode(dec string) string {
+// 	var res []rune
+// 	for _, i := range dec{
+// 		new:=(int(i)+len(dec)) %127
+// 		if new< 33{
+// 			new += 33
+// 		}
+// 		res = append(res, rune(new))
+// 	}
+// 	return string(res)
+// }
+
+func HashCode(dec string) string{
+	var res[]rune
+	for _,i := range dec{
+		new := (int(i)+len(dec)) %127 
+		if new < 33{
 			new += 33
 		}
-		res = append(res, rune(new))
+		res = append(res , rune(new))
 	}
 	return string(res)
 }
